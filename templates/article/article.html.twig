@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+	<div class="container mt-4">
+		<div class="card">
+			<div class="card-header">
+				<h2>{{ title }}</h2>
+				by:
+				<span class="lead">
+					{{ author }}
+				</span>
+				<div class="mt-4 float-right">
+					<span> Likes: {{ likes }}
+					<a href="{{ path('update_article_likes', {id: id}) }}" role="button" method="PUT" class="btn btn-outline-info waves-effect px-3">
+						<i class="far fa-thumbs-up"></i>
+					</a>
+                    </span>
+					<span class="ml-4"> Reads: {{ read_count }} </span>
+				</div>
+			</div>
+			<div class="card-body">
+				{{ contents }}
+			</div>
+		</div>
+		<a class="btn btn-secondary mt-4" href="{{ path('all_articles') }}" role="button">Back</a>
+		<a class="btn btn-warning mt-4 float-right" href="{{ path('update_article',  {id: id}) }}" role="button" method="PUT">UPDATE</a>
+
+	</div>
+{% endblock %}

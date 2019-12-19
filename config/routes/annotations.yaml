@@ -1,0 +1,7 @@
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+
+delete_post:
+  path: /article/{id}
+  controller: App\ArticleController::deleteArticle

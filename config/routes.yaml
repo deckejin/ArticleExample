@@ -1,3 +1,28 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /
+   controller: App\Controller\DefaultController::index
+   
+delete_post:
+  path: /articles/delete/{id}
+  controller: App\Controller\ArticleController::deleteArticle
+
+update_post:
+  path: /articles/update/{id}
+  controller: App\Controller\ArticleController::updateArticle
+
+all_articles:
+  path: /articles
+  controller: App\Controller\ArticleController::getAllArticles
+
+get_article:
+  path: /articles/get/{id}
+  controller: App\Controller\ArticleController::getArticle
+
+new_article:
+  path: /articles/new/
+  controller: App\Controller\ArticleController::newArticle
+
+
+update_likes:
+  path: /articles/update_likes/{id}
+  controller: App\Controller\ArticleController::updateArticleLikes

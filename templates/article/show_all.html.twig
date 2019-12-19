@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+	<div class="container mt-4">
+		<div>
+			<h2>Articles:</h2>
+		</div>
+		<table class="table table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">Title</th>
+					<th>Author</th>
+					<th>Likes</th>
+					<th>Reads</th>
+					<th></th>
+					<th></th>
+					<th></th>
+
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for article in articles %}
+					<tr>
+						<td>
+							<span class="lead">
+								{{ article.title }}
+							</span>
+						</td>
+						<td>
+							{{ article.author }}
+						</td>
+						<td>
+							{{ article.likes }}
+						</td>
+
+						<td>
+							{{ article.readCount }}
+						</td>
+						<td>
+							<a class="btn btn-success" href="{{ path('get_article', {id: article.id}) }}" role="button">READ</a>
+						</td>
+						<td>
+							<a class="btn btn-warning" href="{{ path('update_article', {id: article.id}) }}" role="button" method="PUT">UPDATE</a>
+						</td>
+						<td>
+							<a class="btn btn-danger" href="{{ path('delete_article', {id: article.id}) }}" role="button" method="DELETE">DELETE</a>
+						</td>
+						<td>
+							<a href="{{ path('update_article_likes', {id: article.id, page: 'all_articles'}) }}" role="button" method="PUT" class="btn btn-outline-info waves-effect px-3">
+								<i class="far fa-thumbs-up"></i>
+							</a>
+
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+	</div>
+
+
+{% endblock %}

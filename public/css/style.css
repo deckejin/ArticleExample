@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+.header {
+    padding: 2em;
+    background: #f0f0f0;
+}
+
+.header h1 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: #18171b;
+    font-size: 10em;
+}
+
+.header h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.header h3{
+    font-size: 10px;
+    text-align: center;
+}

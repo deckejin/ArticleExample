@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+				Article Example
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link href='https://fonts.googleapis.com/css?family=Beth Ellen' rel='stylesheet'>
+			<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+			<div class="header">
+				<h1 style="text-align:center">Symfony</h1>
+				<h2>a research project</h2><h3>powered by <img src="{{ asset('symfony_black_03.png') }}" width="30" height="30" alt=""></h3>
+			</div>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="{{ path('index') }}">
+					Symfony
+					<a class="navbar-brand" href="#">
+						<img src="{{ asset('symfony_black_03.png') }}" width="30" height="30" alt="">
+					</a>
+				</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{{ path('all_articles') }}">Show all articles
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								About
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Wiki page</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">About Symfony</a>
+							</div>
+						</li>
+					</ul>
+					<a class="btn btn-primary" href="{{ path('new_article') }}" role="button">New article</a>
+				</div>
+			</nav>
+
+			<div>
+				{% block content %}{% endblock %}
+			</div>
+		{% endblock %}
+
+		{% block javascripts %}
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		{% endblock %}
+	</body>
+
+</html>

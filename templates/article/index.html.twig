@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+	<div class="jumbotron">
+		<h1 class="display-6">Article example</h1>
+		<p class="lead">This is an example of a REST API for research work done for PMUD class.</p>
+		<hr class="my-4">
+		<p>To start, you can write a new article (about how much do you enjoy Symfony) or check out all already published articles.</p>
+		<p class="lead">
+			<a class="btn btn-success" href="/articles" role="button">SHOW ALL ARTICLES</a>
+			<a class="btn btn-primary" href="{{ path('new_article') }}" role="button">New article</a>
+		</p>
+	</div>
+
+
+{% endblock %}

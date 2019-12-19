@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="container mt-4">
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<a class="btn btn-secondary" href="{{ path('all_articles') }}" role="button">Back</a>
+	<input type="submit" value="Send" class="btn btn-primary float-right"/>
+	{{ form_end(form) }}
+    </div>
+
+{% endblock %}
